@@ -1,0 +1,12 @@
+{% extends "main.html" %}
+
+{% block title %}Удаление{% endblock %}
+
+{% block content %}
+    <p>Вы действительно хотите удалить пользователя "{{ user.name }}"?</p>
+        <form method="post">
+            {{ form.hidden_tag() }}
+            <p>{{ form.submit() }}</p>
+        </form>
+        <a href="{{ url_for('user.list') }}">Отмена</a>
+{% endblock %}

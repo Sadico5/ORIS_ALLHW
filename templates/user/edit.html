@@ -1,0 +1,20 @@
+{% extends "main.html" %}
+
+{% block title %}Изменение{% endblock %}
+
+{% block content %}
+    <h1>Изменение пользователя</h1>
+    <form method="post">
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.name.label }}<br>
+            {{ form.name(value=user.name) }}
+        </p>
+        <p>
+            {{ form.description.label }}<br>
+            {{ form.description(value=user.description) }}
+        </p>
+        <p>{{ form.submit() }}</p>
+    </form>
+    <a href="{{ url_for('user.list') }}">Назад</a>
+{% endblock %}

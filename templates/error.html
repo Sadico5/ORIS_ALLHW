@@ -1,0 +1,8 @@
+{% extends "main.html" %}
+
+{% block title %}Ошибка{% endblock %}
+
+{% block content %}
+    <h1>Произошла ошибка!</h1>
+    <a href="{{ url_for('main') }}">Назад</a>
+{% endblock %}

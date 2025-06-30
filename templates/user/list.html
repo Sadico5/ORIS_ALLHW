@@ -1,0 +1,19 @@
+{% extends "main.html" %}
+
+{% block title %}Пользователи{% endblock %}
+
+{% block content %}
+    <h1>Список пользователей:</h1>
+    <a href="{{ url_for('user.create') }}">Создать пользователя</a>
+    <ul>
+        {% for user in users %}
+            <li>
+                <a href="{{ url_for('user.view', user_id=user.id) }}">{{ user.name }} </a>
+                (<a href="{{ url_for('user.edit', user_id=user.id) }}">  Изменить</a>/
+                <a href="{{ url_for('user.delete', user_id=user.id) }}">Удалить</a>)
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('main') }}">Назад</a>
+{% endblock %}
+
